@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class Postcontroller extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $info = User::find(Auth::id());
@@ -24,24 +20,14 @@ class Postcontroller extends Controller
         return view('home',compact('messages'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create($id)
     {
-            $name = User::findOrFail($id);
-       // return "hi " . $name->name;
-        return view ('message',compact('name'));
+            $name = User::where('username',$id)->firstOrFail();
+            return view ('message',compact('name'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
        $posts = new message();
@@ -53,23 +39,12 @@ class Postcontroller extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show()
     {
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit()
     {
         $info = User::find(Auth::id());
