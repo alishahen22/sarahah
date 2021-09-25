@@ -27,7 +27,7 @@
 
 
                     <a class="link-color" style="font-size: 18px; color: #0da39c" href="/s/{{Auth::id()}}" target="_blank">
-                        http://127.0.0.1:8000/s/{{Auth::id()}}
+                        http://sarahahclone.herokuapp.com/s/{{Auth::id()}}
                     </a>
                 </div>
             </div>
