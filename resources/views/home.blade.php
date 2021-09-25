@@ -26,8 +26,8 @@
 
 
 
-                    <a class="link-color" style="font-size: 18px; color: #0da39c" href="/s/{{Auth::id()}}" target="_blank">
-                        http://sarahahclone.herokuapp.com/s/{{Auth::id()}}
+                    <a class="link-color" style="font-size: 18px; color: #0da39c" href="/s/{{Auth::user()->username}}" target="_blank">
+                        http://sarahahclone.herokuapp.com/s/{{Auth::user()->username}}
                     </a>
                 </div>
             </div>
