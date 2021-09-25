@@ -41,6 +41,15 @@
             <div class="card">
                 <div class="cord-body">
                     <div class="tab-content" id="nav-tabContent">
+                        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                         <div class="tab-pane fade show active" id="list-home" role="tabpanel"
                              aria-labelledby="list-home-list">
                             <form action="/setting/s/{{$info->id}}" method="post">
@@ -60,7 +69,12 @@
                                                value="{{$info->email}}">
                                     </div>
                                 </div>
-
+                                <div class="form-group row">
+                                    <label class="col-md-4 col-form-label" for="username">Username</label>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control" name = 'username'id="username" value="{{$info->username}}">
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <div class="col-md-offset-4 col-md-8">
