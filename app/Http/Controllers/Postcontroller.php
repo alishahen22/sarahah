@@ -61,9 +61,15 @@ class Postcontroller extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(Auth::user()->username !=$request->username){
+        $request->validate([
+            'username' => ['required', 'string','alpha_dash', 'max:255', 'unique:users']
+        ]);
+    }
        $user = User::find($id);
        $user->name = $request->name;
        $user->email = $request->email;
+       $user->username = $request->username;
        $user->save();
        return redirect()->back()->with('msg','تم تعديل بياناتك بنجاح');
     }
