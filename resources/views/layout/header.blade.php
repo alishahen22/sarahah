@@ -43,7 +43,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <form method="POST" action="http://127.0.0.1:8000/logout">
+                    <form method="POST" action="/logout">
                         @csrf
                          <a class=" leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out" href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
                                              this.closest('form').submit();">Log Out</a>
