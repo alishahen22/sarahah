@@ -96,10 +96,10 @@
                     @csrf
                     <div class="form-group row">
                         <div class="col-lg-9 col-md-10 col-sm-9">
-                            <input type="text" placeholder="Email or Username"
+                            <input type="text" placeholder="Your Email .."
 
                                    class="form-control inp" id="emailOrUsername"
-                                   name="email" :value="old('email')" required autofocus >
+                                   name="email" :value="old('email')"  autofocus >
 
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                                    class="form-control inp" id="password"
                                    data-val="true"
                                    name="password"
-                                   required autocomplete="current-password">
+                                    autocomplete="current-password">
 
                                 </ul>
 
