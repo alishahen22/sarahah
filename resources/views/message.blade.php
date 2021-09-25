@@ -1,8 +1,4 @@
-@if(session()->has('msg'))
-<div class="alert alert-success">
-    {{ session()->get('msg') }}
-</div>
-@endif
+
 
 <head>
     <meta charset="UTF-8">
@@ -15,16 +11,21 @@
 </head>
 <section class="container se-md">
     <div class="row">
+        @if(session()->has('msg'))
+<div class="alert alert-success">
+    {{ session()->get('msg') }}
+</div>
+@endif
         <div class="col-12">
             <div class="card">
-                <div style="background-color: #f1f7f3" class="card-body">
+                <div style="background-color: #bbecea" class="card-body">
                     <form action="/home" method = 'POST'>
                         @csrf
                     <div class="pull-right">
-                        <img style="width: 20px;vertical-align : top" src="assets/img/report.png">
+
                     </div>
                     <div class="text-center">
-                        <img src="../assets/img/avatar.png" class="panel-profile-img" width="100" height="100" id="img">
+
 
                     </div>
                     <h5 class="panel-title">
@@ -70,3 +71,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
 </head>
+
+<style>
+
