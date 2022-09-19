@@ -26,7 +26,7 @@ require __DIR__.'/auth.php';
 
 
 
-
+Route::get('/ali', [PostController::class,'ali']);
 Route::get('/home', [PostController::class,'index'])->middleware(['auth']);
 Route::get('/s/{id}', [PostController::class,'create']);
 Route::post('/home', [PostController::class,'store']);
