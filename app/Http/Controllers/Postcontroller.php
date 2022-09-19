@@ -9,7 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 class Postcontroller extends Controller
 {
-
+    
+    public function ali()
+    {
+        $info = User::all();
+              return $info;
+    }
     public function index()
     {
         $info = User::find(Auth::id());
